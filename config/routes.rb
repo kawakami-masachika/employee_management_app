@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
   root 'tops#index'
-  # resources :tops, only: %w[index]
+  namespace :admin do
+    resources :employees, :except => %w(edit update)
+  end
+
+  resources :employees, :except => %w(new create destroy)
 end
