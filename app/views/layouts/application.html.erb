@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>EmployeeManagementApp</title>
+    <title>社員管理</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,8 @@
   </head>
 
   <body>
+    <%= render 'common/header'%>
     <%= yield %>
+    <%= render 'common/footer'%>
   </body>
 </html>
