@@ -10,7 +10,7 @@ class CreateEmployees < ActiveRecord::Migration[6.0]
       t.integer :employment_type, null: false, comment: "雇用形態"
       t.string :email, null: false, unique: true, comment: "メールアドレス"
       t.string :password_digest, null: false, comment: "パスワード"
-      t.string :remember_token, null: false, comment: "トークン"
+      t.string :remember_token, comment: "トークン"
       t.boolean :admin, null: false, dafalut: false, comment: "管理者フラグ"
 
       t.timestamps
