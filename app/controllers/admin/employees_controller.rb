@@ -6,6 +6,20 @@ class Admin::EmployeesController < ApplicationController
 
   def create
     @employee = Employee.new(employee_params)
+    @employee.birth_date = @employee.concat_date(
+                                    "birth_date",
+                                    @employee.birth_date_year,
+                                    @employee.birth_date_month,
+                                    @employee.birth_date_day
+                                  )
+
+    @employee.join_date = @employee.concat_date(
+                                    "join_date",
+                                    @employee.join_date_year,
+                                    @employee.join_date_month,
+                                    @employee.join_date_day
+                                  )
+
     if @employee.valid?
       @employee.save
       flash[:success] = "社員情報の登録が完了しました"
